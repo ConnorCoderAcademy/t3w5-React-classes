@@ -3,8 +3,8 @@
 
 //Blueprint of data
 class Media {
-    constructor(){
-        this.name = "Default generic media";
+    constructor(mediaName){
+        this.name = mediaName;
 
         Media.count++;
     }

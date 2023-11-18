@@ -1,11 +1,23 @@
 const {Media} = require("./Media.js")
 
 class VideoGame extends Media{
-    constructor() {
-        super();
+    constructor(newName, platform, players=1) {
+        super(newName);
+        // this.name = newName;
+        this.platform = platform || 1;
+        this.players = players;
+    }
+
+    getVideoGame() {
+        return `${this.name} is a video game for ${this.players} player(s) on ${this.platform}.`
     }
 }
 
-let someVideoGame = new VideoGame();
-console.log(someVideoGame.name);
+let someVideoGame = new VideoGame("Runescape", "PC", 4);
+// console.log(someVideoGame.name);
+// console.log(`Platform: ${someVideoGame.platform}`);
+// console.log(`Number of players: ${someVideoGame.players}`);
+console.log(someVideoGame.getVideoGame())
+// console.log(someVideoGame.getMediaName());
+// console.log(someVideoGame.version());
 console.log(Media.count);
